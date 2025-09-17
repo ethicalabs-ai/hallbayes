@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-stable_decode_completions.py — Inflection‑Aware Generation using the **Completions API**
+stable_decode.py — Inflection‑Aware Generation using the **Completions API**
 =======================================================================================
 Example Usage
 ------------
