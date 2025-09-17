@@ -29,7 +29,7 @@ Newer chat‑only models (e.g., many `gpt-4o*`) may not support Completions.
 
 Usage (CLI)
 -----------
-python stable_decode_completions.py \
+python stable_decode.py \
   --prompt "Evidence:\n- Paris is in France\n\nQuestion: Capital of France?" \
   --model gpt-3.5-turbo-instruct \
   --use-pmd \
