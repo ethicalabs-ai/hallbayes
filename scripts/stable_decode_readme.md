@@ -40,7 +40,7 @@ export OPENAI_API_KEY="your-api-key-here"
 ### Basic Command Line Usage
 
 ```bash
-python stable_decode_chat_v5.py \
+python stable_decode_chat.py \
     --prompt "Explain quantum computing" \
     --model gpt-4o-mini \
     --max-tokens 64
@@ -49,7 +49,7 @@ python stable_decode_chat_v5.py \
 ### Advanced Configuration
 
 ```bash
-python stable_decode_chat_v5.py \
+python stable_decode_chat.py \
     --prompt "What are the benefits of renewable energy?" \
     --model gpt-4o-mini \
     --max-tokens 128 \
@@ -65,7 +65,7 @@ python stable_decode_chat_v5.py \
 
 Format your prompt with evidence bullets:
 ```bash
-python stable_decode_chat_v5.py \
+python stable_decode_chat.py \
     --prompt "Evidence:
 - Solar panels convert sunlight to electricity
 - Wind turbines generate power from wind
@@ -203,7 +203,7 @@ This implementation is provided for research and educational purposes. Please re
 
 For detailed debugging, examine the trace output which shows step-by-step decision making:
 ```bash
-python stable_decode_chat_v5.py --prompt "test" --max-tokens 10 2>&1 | tee debug.log
+python stable_decode_chat.py --prompt "test" --max-tokens 10 2>&1 | tee debug.log
 ```
 
 ## Contributing
