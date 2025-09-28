@@ -238,7 +238,7 @@ On a labeled validation set:
    - Empirical hallucination rate among answered items
    - Wilson upper bound at 95% confidence
 3. **Select smallest margin** where Wilson upper bound ≤ target $h^*$ (e.g., 5%)
-4. **Freeze policy**: $(h^*, \tau, \text{margin}, B, \text{clip\_mode}, m, r, \text{skeleton\_policy})$
+4. **Freeze policy**: $`(h^*, \tau, \text{margin}, B, \text{clip\_mode}, m, r, \text{skeleton\_policy})`$
 
 ### Portfolio Reporting
 
