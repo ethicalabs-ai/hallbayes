@@ -133,10 +133,6 @@ def validate_openai_setup() -> bool:
         print("Please set it with: export OPENAI_API_KEY=your_api_key_here")
         return False
     
-    if not api_key.startswith("sk-"):
-        print("ERROR: OPENAI_API_KEY doesn't look valid (should start with 'sk-')")
-        return False
-    
     print("OK: OpenAI API key found and looks valid")
     return True
 
