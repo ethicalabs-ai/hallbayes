@@ -17,7 +17,7 @@ import sys
 from getpass import getpass
 from typing import Optional
 
-from scripts.hallucination_toolkit import (
+from hallbayes.toolkit import (
     OpenAIBackend,
     OpenAIItem,
     OpenAIPlanner,

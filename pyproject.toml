@@ -35,4 +35,4 @@ hallrisk-example = "app.examples.example:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["app*", "scripts*"]
+include = ["hallbayes*", "app*"]

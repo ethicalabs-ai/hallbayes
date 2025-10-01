@@ -10,12 +10,12 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 
-from scripts.hallucination_toolkit import (
+from hallbayes.hallucination_toolkit import (
     OpenAIBackend,
     OpenAIItem,
     OpenAIPlanner,
 )
-from scripts.utils import (
+from hallbayes.utils import (
     create_batch_from_prompts,
     print_summary,
     save_results_to_json,

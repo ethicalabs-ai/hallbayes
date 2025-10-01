@@ -38,15 +38,11 @@ import re
 import time
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Optional, Sequence, Tuple
+from openai import OpenAI
 
 # ------------------------------------------------------------------------------------
 # OpenAI Backend
 # ------------------------------------------------------------------------------------
-
-try:
-    from openai import OpenAI  # type: ignore
-except Exception as e:  # pragma: no cover
-    OpenAI = None
 
 
 class OpenAIBackend:
@@ -54,15 +50,20 @@ class OpenAIBackend:
         self,
         model: str = "gpt-4o-mini",
         api_key: Optional[str] = None,
+        api_url: Optional[str] = None,
+        client: Optional[OpenAI] = None,
         request_timeout: float = 60.0,
     ) -> None:
-        if OpenAI is None:
-            raise ImportError("Install `openai>=1.0.0` and set OPENAI_API_KEY.")
+        if client:
+            self.client = client
+        else:
+            self.api_key = api_key or os.environ.get("OPENAI_API_KEY", "")
+            self.api_url = api_url or os.environ.get("OPENAI_API_BASE", None)
+            if not self.api_key:
+                raise RuntimeError("OPENAI_API_KEY not set.")
+            self.client = OpenAI(api_key=self.api_key, base_url=self.api_url)
+
         self.model = model
-        self.api_key = api_key or os.environ.get("OPENAI_API_KEY", "")
-        if not self.api_key:
-            raise RuntimeError("OPENAI_API_KEY not set.")
-        self.client = OpenAI(api_key=self.api_key)
         self.request_timeout = float(request_timeout)
 
     def chat_create(self, messages: List[Dict], **kwargs):

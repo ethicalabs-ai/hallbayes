@@ -22,7 +22,7 @@ from dataclasses import asdict
 
 import streamlit as st
 
-from scripts.hallucination_toolkit import (
+from hallbayes.hallucination_toolkit import (
     OpenAIBackend,
     OpenAIItem,
     OpenAIPlanner,
