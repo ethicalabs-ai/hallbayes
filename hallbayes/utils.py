@@ -9,7 +9,7 @@ from dataclasses import asdict
 import csv
 import os
 
-from .hallucination_toolkit import ItemMetrics, AggregateReport, OpenAIItem
+from .toolkit import ItemMetrics, AggregateReport, OpenAIItem
 
 
 def save_results_to_json(metrics: List[ItemMetrics], filepath: str) -> None:

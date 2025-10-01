@@ -120,7 +120,7 @@ The toolkit exhibits different behaviors across query types, which is **mathemat
 
 **Example**
 ```python
-from hallbayes.hallucination_toolkit import OpenAIBackend, OpenAIItem, OpenAIPlanner
+from hallbayes.toolkit import OpenAIBackend, OpenAIItem, OpenAIPlanner
 
 backend = OpenAIBackend(model="gpt-4o-mini")
 prompt = (
@@ -165,7 +165,7 @@ for m in metrics:
 
 **Example**
 ```python
-from hallbayes.hallucination_toolkit import OpenAIBackend, OpenAIItem, OpenAIPlanner
+from hallbayes.toolkit import OpenAIBackend, OpenAIItem, OpenAIPlanner
 
 backend = OpenAIBackend(model="gpt-4o-mini")
 item = OpenAIItem(
@@ -342,7 +342,7 @@ For tasks where skeletons still trigger answers frequently (causing $\bar{\Delta
 ### 1. Direct Python Usage
 
 ```python
-from hallbayes.hallucination_toolkit import (
+from hallbayes.toolkit import (
     OpenAIBackend, OpenAIItem, OpenAIPlanner,
     make_sla_certificate, save_sla_certificate_json
 )
@@ -446,7 +446,7 @@ The `scripts/utils.py` module provides helper functions:
 ## Minimal End-to-End Example
 
 ```python
-from hallbayes.hallucination_toolkit import (
+from hallbayes.toolkit import (
     OpenAIBackend, OpenAIItem, OpenAIPlanner,
     make_sla_certificate, save_sla_certificate_json,
     generate_answer_if_allowed

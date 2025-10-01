@@ -19,7 +19,7 @@ from typing import List
 # Add the parent directory to Python path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from hallbayes.hallucination_toolkit import (
+from hallbayes.toolkit import (
     OpenAIBackend,
     OpenAIItem,
     OpenAIPlanner,

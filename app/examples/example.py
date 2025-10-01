@@ -6,7 +6,7 @@ This script demonstrates how to decide answer vs abstain without external
 evidence, reporting Δ̄, B2T, ISR, and an EDFL RoH bound.
 """
 
-from hallbayes.hallucination_toolkit import (
+from hallbayes.toolkit import (
     OpenAIBackend,
     OpenAIItem,
     OpenAIPlanner,
