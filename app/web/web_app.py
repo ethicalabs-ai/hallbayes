@@ -61,6 +61,7 @@ def sidebar_controls():
     st.sidebar.header("Configure")
 
     env_key = os.environ.get("OPENAI_API_KEY", "")
+    env_api_base = os.environ.get("OPENAI_API_BASE", "")
 
     with st.sidebar.expander("API & Model", expanded=True):
         api_key = st.text_input(
@@ -69,6 +70,14 @@ def sidebar_controls():
             type="password",
             help="If left empty, the app will try OPENAI_API_KEY from the environment.",
             placeholder=("Using OPENAI_API_KEY from env" if env_key else "sk-..."),
+        ).strip()
+
+        api_base = st.text_input(
+            "OpenAI API Base Url",
+            value="",
+            type="default",
+            help="Optional. To run the app using OpenAI-compatible endpoints.",
+            placeholder=("Using OPENAI_API_BASE from env" if env_api_base else ""),
         ).strip()
 
         model_choice = st.selectbox(
@@ -97,6 +106,7 @@ def sidebar_controls():
 
     return {
         "api_key": api_key or env_key,
+        "api_base": api_base,
         "model": model,
         "n_samples": int(n_samples),
         "m": int(m),
@@ -138,6 +148,9 @@ def main() -> None:
             st.error("OPENAI_API_KEY is missing. Provide it in the sidebar or set the environment variable.")
             return
 
+        api_base = cfg.get("api_base")
+        if api_base:
+            os.environ["OPENAI_API_BASE"] = api_base
         os.environ["OPENAI_API_KEY"] = cfg["api_key"]
 
         item = OpenAIItem(
